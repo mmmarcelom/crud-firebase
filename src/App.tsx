@@ -5,6 +5,8 @@ import Register from './pages/Register';
 import ResetPassword from './pages/ResetPassword';
 import Dashboard from './pages/Dashboard';
 import PrivateRoute from './components/PrivateRoute';
+import Clientes from './pages/Clientes';
+import RegisterCliente from './pages/Register';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +18,16 @@ const App: React.FC = () => {
         <Route path="/dashboard" element={
           <PrivateRoute>
             <Dashboard />
+          </PrivateRoute>
+        } />
+        <Route path="/clientes" element={
+          <PrivateRoute>
+            <Clientes />
+          </PrivateRoute>
+        } />
+        <Route path="/clientes/novo" element={
+          <PrivateRoute>
+            <RegisterCliente />
           </PrivateRoute>
         } />
         <Route path="*" element={<Navigate to="/login" />} />
